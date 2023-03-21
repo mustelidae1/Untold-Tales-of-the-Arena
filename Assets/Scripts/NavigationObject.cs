@@ -14,6 +14,7 @@ public class NavigationObject : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (!CursorChanger.S) return; 
         if (direction == directions.left)
         {
             CursorChanger.S.changeCursorTexture(CursorChanger.S.leftArrowCursor);
@@ -29,6 +30,10 @@ public class NavigationObject : MonoBehaviour
         else if (direction == directions.up)
         {
             CursorChanger.S.changeCursorTexture(CursorChanger.S.upArrowCursor);
+        }
+        else if (direction == directions.none)
+        {
+            CursorChanger.S.changeCursorTexture(CursorChanger.S.highlightedCursor);
         }
     }
 
@@ -57,5 +62,6 @@ public enum directions
     left,
     right,
     down, 
-    up
+    up, 
+    none
 }

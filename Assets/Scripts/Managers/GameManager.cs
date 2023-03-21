@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager S;
+
+    private List<symbol> rewards; 
+
+    public Puzzle currentPuzzle; 
     // some variable to keep track of how many symbols we've collected 
 
     void Awake()
@@ -18,15 +22,26 @@ public class GameManager : MonoBehaviour
             S = this;
         }
         DontDestroyOnLoad(gameObject);
+        rewards = new List<symbol>(); 
     }
 
-    void Start()
+    public void addReward(symbol sym)
     {
-        
+        rewards.Add(sym); 
     }
 
-    void Update()
+    public bool hasReward(symbol sym)
     {
-        
+        return rewards.Contains(sym); 
     }
+}
+
+public enum symbol
+{
+    sword, // Mars 
+    trident, // Poseidon 
+    crown, // Juno 
+    sun, // Sol Invictus 
+    caduceus, // Mercury 
+    lightning // Jupiter 
 }

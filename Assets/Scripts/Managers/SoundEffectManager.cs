@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundEffectManager : MonoBehaviour
 {
-    public AudioSource audioSource; 
+    public AudioSource audioSource;
+    public AudioSource narrationAudioSource; 
 
     public static SoundEffectManager S; 
 
@@ -24,5 +25,10 @@ public class SoundEffectManager : MonoBehaviour
     public void playSound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip); 
+    }
+
+    public void playNarration(AudioClip clip)
+    {
+        narrationAudioSource.PlayOneShot(clip); 
     }
 }
