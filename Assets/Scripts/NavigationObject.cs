@@ -10,10 +10,13 @@ public class NavigationObject : MonoBehaviour
     public directions direction;
     public String destinationScene;
     public bool changeRoom = true;
-    public AudioClip sound; 
+    public AudioClip sound;
+
+    public bool OverrideInteractionDisabled = false;
 
     void OnMouseEnter()
     {
+        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return; 
         if (!CursorChanger.S) return; 
         if (direction == directions.left)
         {
@@ -39,11 +42,13 @@ public class NavigationObject : MonoBehaviour
 
     void OnMouseExit()
     {
+        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
     }
 
     void OnMouseDown()
     {
+        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         if (changeRoom)
         {
             Debug.Log("Navigate to " + destinationScene);

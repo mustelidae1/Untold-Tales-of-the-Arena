@@ -217,14 +217,14 @@ PrefabInstance:
     - target: {fileID: 1695541225014951279, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: sound
       value: 
-      objectReference: {fileID: 8300000, guid: 82b2f89984b235740ab0ee3dd605d0ca, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1695541225014951279, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: direction
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1695541225014951279, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: destinationScene
-      value: Library
+      value: Stairs
       objectReference: {fileID: 0}
     - target: {fileID: 2848376510067816598, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_Name
@@ -302,6 +302,10 @@ PrefabInstance:
     - target: {fileID: 2848376510067816598, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_Name
       value: Navigator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848376510067816598, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_RootOrder
@@ -485,6 +489,7 @@ MonoBehaviour:
   destinationScene: Office
   changeRoom: 1
   sound: {fileID: 8300000, guid: 82b2f89984b235740ab0ee3dd605d0ca, type: 3}
+  OverrideInteractionDisabled: 0
 --- !u!1 &2038089257
 GameObject:
   m_ObjectHideFlags: 0

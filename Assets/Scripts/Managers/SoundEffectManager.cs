@@ -24,11 +24,13 @@ public class SoundEffectManager : MonoBehaviour
 
     public void playSound(AudioClip clip)
     {
+        if (!clip) return; 
         audioSource.PlayOneShot(clip); 
     }
 
     public void playNarration(AudioClip clip)
     {
+        if (!clip) return;
         narrationAudioSource.PlayOneShot(clip); 
     }
 }

@@ -7,17 +7,12 @@ public class PuzzleObject : MonoBehaviour
     public bool isCorrect = false;
 
     public correctType correctType;
-    public GameObject match; 
+    public GameObject match;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnMouseDown()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (GameManager.S.currentPuzzle.isSolved || !(correctType == correctType.selected)) return;
+        setCorrect(); 
         
     }
 
@@ -38,7 +33,9 @@ public class PuzzleObject : MonoBehaviour
         {
             SnapArea sa = match.GetComponent<SnapArea>();
             Vector3 newPos = new Vector3(sa.gameObject.transform.position.x + sa.offset.x, sa.gameObject.transform.position.y + sa.offset.y, transform.position.z);
-            transform.position = newPos; 
+            Quaternion newRot = sa.gameObject.transform.rotation;
+            transform.position = newPos;
+            transform.rotation = newRot; 
         }
     }
 }
@@ -46,5 +43,6 @@ public class PuzzleObject : MonoBehaviour
 public enum correctType
 {
     selected, 
-    matched
+    matched, 
+    collide
 }

@@ -6,10 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager S;
 
+    public GameObject symbolKeyButton;
+    public SymbolKey symbolKey;
+    public GameObject introEnvelope; 
+
     private List<symbol> rewards; 
 
-    public Puzzle currentPuzzle; 
-    // some variable to keep track of how many symbols we've collected 
+    public Puzzle currentPuzzle;
+    public bool interactionDisabled = false;
+
 
     void Awake()
     {
@@ -22,12 +27,16 @@ public class GameManager : MonoBehaviour
             S = this;
         }
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(symbolKeyButton);
+        DontDestroyOnLoad(symbolKey);
+        introEnvelope.SetActive(true); 
         rewards = new List<symbol>(); 
     }
 
     public void addReward(symbol sym)
     {
-        rewards.Add(sym); 
+        rewards.Add(sym);
+        symbolKey.activateSymbolKey(sym); 
     }
 
     public bool hasReward(symbol sym)
@@ -45,3 +54,5 @@ public enum symbol
     caduceus, // Mercury 
     lightning // Jupiter 
 }
+
+

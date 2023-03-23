@@ -13,13 +13,9 @@ public class Puzzle : MonoBehaviour
 
     public bool isSolved = false; 
 
-    void Awake()
-    {
-        GameManager.S.currentPuzzle = this; 
-    }
-
     void Start()
     {
+        GameManager.S.currentPuzzle = this; 
         // TODO make this work
         if (GameManager.S.hasReward(reward)) // we already solved the puzzle 
         {
@@ -33,6 +29,7 @@ public class Puzzle : MonoBehaviour
 
     public void checkSolution()
     {
+        if (isSolved) return; 
         foreach (PuzzleObject o in puzzleObjects)
         {
             if (!o.isCorrect)
@@ -42,7 +39,7 @@ public class Puzzle : MonoBehaviour
             } 
         }
         isSolved = true;
-        Debug.Log("PUZZLE SOLVED"); 
-        // Add whatever action 
+        Debug.Log("PUZZLE SOLVED");
+        GameManager.S.addReward(reward); 
     }
 }
