@@ -24,13 +24,15 @@ public class SoundEffectManager : MonoBehaviour
 
     public void playSound(AudioClip clip)
     {
-        if (!clip) return; 
+        if (!clip) return;
+        //if (audioSource.isPlaying) return; (it's fine if sound effects overlap) 
         audioSource.PlayOneShot(clip); 
     }
 
     public void playNarration(AudioClip clip)
     {
         if (!clip) return;
+        if (narrationAudioSource.isPlaying) narrationAudioSource.Stop(); 
         narrationAudioSource.PlayOneShot(clip); 
     }
 }

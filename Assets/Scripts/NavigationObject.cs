@@ -10,9 +10,12 @@ public class NavigationObject : MonoBehaviour
     public directions direction;
     public String destinationScene;
     public bool changeRoom = true;
+    public bool changePage = false; 
     public AudioClip sound;
 
     public bool OverrideInteractionDisabled = false;
+    public List<GameObject> pages;
+    public GameObject page;
 
     void OnMouseEnter()
     {
@@ -53,7 +56,14 @@ public class NavigationObject : MonoBehaviour
         {
             Debug.Log("Navigate to " + destinationScene);
             SceneManager.LoadScene(destinationScene);
-        } else
+        } else if (changePage)
+        {
+            foreach (GameObject g in pages)
+            {
+                g.SetActive(false); 
+            }
+            page.SetActive(true); 
+        } else 
         {
             gameObject.transform.parent.gameObject.SetActive(false); 
         }

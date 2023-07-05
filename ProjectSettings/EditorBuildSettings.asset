@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Library.unity
     guid: 1c46c6d8130f3e948a553d5fc425398d
   - enabled: 1
-    path: Assets/Scenes/Outside.unity
+    path: Assets/Scenes/_Outside.unity
     guid: 4d4bbefd58dd50f46ba7036f01e08a0f
   - enabled: 1
     path: Assets/Scenes/P1.unity

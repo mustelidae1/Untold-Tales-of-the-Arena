@@ -963,6 +963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleObjects:
   - {fileID: 1927920421}
+  rewardObjects: []
+  successSound: {fileID: 8300000, guid: db50080b5ceaa5c48b15abee9916bd4b, type: 3}
   reward: 1
   isSolved: 0
 --- !u!4 &1915368182

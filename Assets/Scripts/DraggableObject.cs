@@ -15,6 +15,7 @@ public class DraggableObject : MonoBehaviour
     private SnapArea overlap = null;
     private PuzzleObject po;
     private Vector3 originalPos;
+    private Transform originalParent; 
     private Quaternion originalRot; 
 
     public AudioClip interactSound;
@@ -25,7 +26,8 @@ public class DraggableObject : MonoBehaviour
     {
         po = GetComponent<PuzzleObject>();
         originalPos = this.gameObject.transform.position;
-        originalRot = this.gameObject.transform.rotation; 
+        originalRot = this.gameObject.transform.rotation;
+        originalParent = this.gameObject.transform.parent; 
     }
 
     void OnMouseEnter() {
@@ -73,10 +75,12 @@ public class DraggableObject : MonoBehaviour
             Vector3 newPos = new Vector3(overlap.gameObject.transform.position.x + overlap.offset.x, overlap.gameObject.transform.position.y + overlap.offset.y, transform.position.z);
             Quaternion newRot = overlap.gameObject.transform.rotation; 
             transform.position = newPos;
-            transform.rotation = newRot; 
+            transform.rotation = newRot;
+            transform.SetParent(null); 
             if (overlap.gameObject == po.match)
             {
-                po.setCorrect(); 
+                po.setCorrect();
+                po.transform.SetParent(overlap.gameObject.transform); 
             } else
             {
                 po.setIncorrect(); 
@@ -87,7 +91,8 @@ public class DraggableObject : MonoBehaviour
             if (isDestructable)
             {
                 transform.position = originalPos;
-                transform.rotation = originalRot; 
+                transform.rotation = originalRot;
+                transform.SetParent(originalParent); 
             }
         }
     }

@@ -35,7 +35,8 @@ public class PuzzleObject : MonoBehaviour
             Vector3 newPos = new Vector3(sa.gameObject.transform.position.x + sa.offset.x, sa.gameObject.transform.position.y + sa.offset.y, transform.position.z);
             Quaternion newRot = sa.gameObject.transform.rotation;
             transform.position = newPos;
-            transform.rotation = newRot; 
+            transform.rotation = newRot;
+            transform.SetParent(null); 
         }
     }
 }

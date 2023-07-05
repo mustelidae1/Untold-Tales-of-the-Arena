@@ -18,7 +18,7 @@ public class NarrationObject : MonoBehaviour
     void OnMouseDown()
     {
         if (!requiresClick) return; 
-        SoundEffectManager.S.playSound(sound);
+        SoundEffectManager.S.playNarration(sound);
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
     }
 

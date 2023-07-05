@@ -11,7 +11,14 @@ public class ClickableObject : MonoBehaviour
 
     public bool OverrideInteractionDisabled = false; 
 
-    public bool isDestructable = false;  
+    public bool isDestructable = false;
+    public bool destroyParent = true; 
+
+    public bool animateSomethingOnce = false;
+    public Animator objectToAnimate;
+
+    public bool isReward;
+    public symbol reward; 
 
     void OnMouseEnter() {
         if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
@@ -27,9 +34,27 @@ public class ClickableObject : MonoBehaviour
     void OnMouseDown()
     {
         if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
-        go.SetActive(true);
+        if (go != null) go.SetActive(true);
         SoundEffectManager.S.playSound(sound);
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
-        if (isDestructable) this.gameObject.SetActive(false); 
+        if (isDestructable)
+        {
+            if (this.gameObject.transform.parent != null && destroyParent)
+            {
+                this.gameObject.transform.parent.gameObject.SetActive(false); 
+            } else
+            {
+                this.gameObject.SetActive(false);
+            }
+        } 
+        if (animateSomethingOnce)
+        {
+            objectToAnimate.Play("Grow");
+            animateSomethingOnce = false;
+        }
+        if (isReward)
+        {
+            GameManager.S.addReward(reward);
+        }
     }
 }

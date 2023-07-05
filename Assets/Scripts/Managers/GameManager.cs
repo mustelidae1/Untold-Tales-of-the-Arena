@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public SymbolKey symbolKey;
     public GameObject introEnvelope; 
 
-    private List<symbol> rewards; 
+    private List<symbol> rewards;
+    private List<symbol> puzzlesSolved; 
 
     public Puzzle currentPuzzle;
     public bool interactionDisabled = false;
@@ -30,18 +31,45 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(symbolKeyButton);
         DontDestroyOnLoad(symbolKey);
         introEnvelope.SetActive(true); 
-        rewards = new List<symbol>(); 
+        rewards = new List<symbol>();
+        puzzlesSolved = new List<symbol>(); 
     }
 
     public void addReward(symbol sym)
     {
+        if (hasReward(sym)) return; 
         rewards.Add(sym);
         symbolKey.activateSymbolKey(sym); 
+    }
+
+    public void addPuzzleSolved(symbol sym)
+    {
+        if (hasPuzzleSolved(sym)) return; 
+        puzzlesSolved.Add(sym);
+    }
+
+    public void updateRewards(SymbolKey symKey)
+    {
+        symKey.clearSymbolKeys(); 
+        foreach (symbol sym in rewards)
+        {
+            symKey.activateSymbolKey(sym, false); 
+        }
     }
 
     public bool hasReward(symbol sym)
     {
         return rewards.Contains(sym); 
+    }
+
+    public bool hasPuzzleSolved(symbol sym)
+    {
+        return puzzlesSolved.Contains(sym);
+    }
+
+    public void showSymKeyButton(bool show)
+    {
+        symbolKeyButton.SetActive(show); 
     }
 }
 
