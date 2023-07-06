@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 8ea20c461d11f5641a781d44ad128104, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!61 &713355887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1197,6 +1198,7 @@ MonoBehaviour:
   - {fileID: 983322124}
   rewardObjects:
   - {fileID: 2039643127}
+  hideObjects: []
   objectToAnimate: {fileID: 1427819835}
   successSound: {fileID: 0}
   reward: 0
@@ -2302,19 +2304,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalScale.x
-      value: 17.919348
+      value: 15.521738
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.71088314
+      value: 0.63595605
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0223
+      value: 1.221
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.6444
+      value: -4.6069
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalPosition.z

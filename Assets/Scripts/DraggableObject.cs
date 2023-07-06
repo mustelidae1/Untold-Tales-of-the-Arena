@@ -12,7 +12,7 @@ public class DraggableObject : MonoBehaviour
     private float objectWidth;
     private float objectHeight;
 
-    private SnapArea overlap = null;
+   // private SnapArea overlap = null;
     private PuzzleObject po;
     private Vector3 originalPos;
     private Transform originalParent; 
@@ -20,14 +20,17 @@ public class DraggableObject : MonoBehaviour
 
     public AudioClip interactSound;
 
-    public bool isDestructable = false; 
+    public bool isDestructable = false;
+
+    public List<SnapArea> overlaps; 
 
     void Start()
     {
         po = GetComponent<PuzzleObject>();
         originalPos = this.gameObject.transform.position;
         originalRot = this.gameObject.transform.rotation;
-        originalParent = this.gameObject.transform.parent; 
+        originalParent = this.gameObject.transform.parent;
+        overlaps = new List<SnapArea>(); 
     }
 
     void OnMouseEnter() {
@@ -69,18 +72,23 @@ public class DraggableObject : MonoBehaviour
     void OnMouseUp()
     {
         if (GameManager.S.currentPuzzle.isSolved && po.correctType == correctType.matched) return;
-        if (overlap)
+        if (overlaps.Count > 0) // can only get here if it's correctType.matched because overlaps only gets things added to it in that case 
         {
+            SnapArea overlap = overlaps[overlaps.Count - 1];
             SoundEffectManager.S.playSound(interactSound);
             Vector3 newPos = new Vector3(overlap.gameObject.transform.position.x + overlap.offset.x, overlap.gameObject.transform.position.y + overlap.offset.y, transform.position.z);
             Quaternion newRot = overlap.gameObject.transform.rotation; 
             transform.position = newPos;
             transform.rotation = newRot;
-            transform.SetParent(null); 
+            transform.SetParent(null);
+            foreach (DraggableObject d in overlap.gameObject.GetComponentsInChildren<DraggableObject>())
+            {
+                d.sendBack(); 
+            }
+            po.transform.SetParent(overlap.gameObject.transform);
             if (overlap.gameObject == po.match)
             {
                 po.setCorrect();
-                po.transform.SetParent(overlap.gameObject.transform); 
             } else
             {
                 po.setIncorrect(); 
@@ -90,11 +98,16 @@ public class DraggableObject : MonoBehaviour
             po.setIncorrect(); 
             if (isDestructable)
             {
-                transform.position = originalPos;
-                transform.rotation = originalRot;
-                transform.SetParent(originalParent); 
+                sendBack(); 
             }
         }
+    }
+
+    public void sendBack()
+    {
+        transform.position = originalPos;
+        transform.rotation = originalRot;
+        transform.SetParent(originalParent);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -103,7 +116,7 @@ public class DraggableObject : MonoBehaviour
         CollideArea col = collision.gameObject.GetComponent<CollideArea>(); 
         if (snap && po.correctType == correctType.matched)
         {
-            overlap = snap;
+            overlaps.Add(snap); 
             //snap.highlight(); 
         } 
         if (col && po.correctType == correctType.collide)
@@ -117,10 +130,8 @@ public class DraggableObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        SnapArea snap = collision.gameObject.GetComponent<SnapArea>();
+        overlaps.Remove(snap); 
         //if (overlap) overlap.unhighlight(); 
-        if (overlap == collision.GetComponent<SnapArea>())
-        {
-            overlap = null;
-        }   
     }
 }

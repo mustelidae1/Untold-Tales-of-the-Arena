@@ -925,6 +925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!1 &768389802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!1 &1203556510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,6 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!1 &1404128085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!1001 &1765888961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2277,19 +2281,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalScale.x
-      value: 19.819864
+      value: 15.5248995
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1287149
+      value: 1.1536595
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4044
+      value: 1.7432
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.7782
+      value: -4.7907
       objectReference: {fileID: 0}
     - target: {fileID: 5303783686187313114, guid: a94592b6be25ba34484c6c8bfb071117, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2489,6 +2493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!1 &1837886511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,6 +2937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   isDestructable: 0
+  overlaps: []
 --- !u!1 &1992081232
 GameObject:
   m_ObjectHideFlags: 0
