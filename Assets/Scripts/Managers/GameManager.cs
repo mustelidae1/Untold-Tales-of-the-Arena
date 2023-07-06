@@ -80,7 +80,8 @@ public enum symbol
     crown, // Juno 
     sun, // Sol Invictus 
     caduceus, // Mercury 
-    lightning // Jupiter 
+    lightning, // Jupiter
+    none
 }
 
 
