@@ -17,6 +17,8 @@ public class NavigationObject : MonoBehaviour
     public List<GameObject> pages;
     public GameObject page;
 
+    public bool stopMusic = false; 
+
     void OnMouseEnter()
     {
         if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return; 
@@ -68,7 +70,8 @@ public class NavigationObject : MonoBehaviour
             gameObject.transform.parent.gameObject.SetActive(false); 
         }
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
-        SoundEffectManager.S.playSound(sound); 
+        SoundEffectManager.S.playSound(sound);
+        if (stopMusic) SoundEffectManager.S.stopMusic(); 
     }
 }
 

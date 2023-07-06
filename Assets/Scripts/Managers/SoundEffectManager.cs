@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundEffectManager : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioSource narrationAudioSource; 
+    public AudioSource narrationAudioSource;
+    public AudioSource musicAudioSource; 
 
     public static SoundEffectManager S; 
 
@@ -20,6 +21,11 @@ public class SoundEffectManager : MonoBehaviour
             S = this;
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void stopMusic()
+    {
+        musicAudioSource.Stop(); 
     }
 
     public void playSound(AudioClip clip)

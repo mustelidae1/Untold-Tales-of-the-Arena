@@ -480,6 +480,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 559951918}
     - target: {fileID: 710263342500630516, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
+      propertyPath: musicAudioSource
+      value: 
+      objectReference: {fileID: 1795605971}
+    - target: {fileID: 710263342500630516, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
       propertyPath: narrationAudioSource
       value: 
       objectReference: {fileID: 83060331}
@@ -541,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710263342500630522, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 710263342500630526, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
       propertyPath: m_Name
@@ -966,6 +970,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   OverrideInteractionDisabled: 1
   isDestructable: 1
+  destroyParent: 1
   animateSomethingOnce: 1
   objectToAnimate: {fileID: 1377765783}
   isReward: 0
@@ -1307,6 +1312,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   OverrideInteractionDisabled: 1
   isDestructable: 1
+  destroyParent: 1
   animateSomethingOnce: 0
   objectToAnimate: {fileID: 0}
   isReward: 0
@@ -1538,6 +1544,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   OverrideInteractionDisabled: 0
   isDestructable: 0
+  destroyParent: 1
   animateSomethingOnce: 0
   objectToAnimate: {fileID: 0}
   isReward: 0
@@ -1598,6 +1605,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   OverrideInteractionDisabled: 1
   isDestructable: 1
+  destroyParent: 1
   animateSomethingOnce: 0
   objectToAnimate: {fileID: 0}
   isReward: 0
@@ -1695,6 +1703,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.7, y: 11.13}
   m_EdgeRadius: 0
+--- !u!82 &1795605971 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 710263342500630522, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
+  m_PrefabInstance: {fileID: 623205694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1869681154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +2009,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   OverrideInteractionDisabled: 1
   isDestructable: 1
+  destroyParent: 1
   animateSomethingOnce: 0
   objectToAnimate: {fileID: 0}
   isReward: 0

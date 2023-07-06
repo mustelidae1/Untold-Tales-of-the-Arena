@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/P4.unity
     guid: 6177dd888002d5242becfbe550a2b336
+  - enabled: 1
+    path: Assets/Scenes/Montage.unity
+    guid: 28a8a35c5b128004ba3de5eba7bb7a94
   m_configObjects: {}
