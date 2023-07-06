@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710263342500630522, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 710263342500630526, guid: 35b922681ad80f5488e2fa0d6e571195, type: 3}
       propertyPath: m_Name
@@ -1543,8 +1543,8 @@ MonoBehaviour:
   go: {fileID: 1019455097}
   sound: {fileID: 8300000, guid: 710fc70a89c3d3c489a132c7e4bed0cb, type: 3}
   OverrideInteractionDisabled: 0
-  isDestructable: 0
-  destroyParent: 1
+  isDestructable: 1
+  destroyParent: 0
   animateSomethingOnce: 0
   objectToAnimate: {fileID: 0}
   isReward: 0
