@@ -7,6 +7,8 @@ public class ClickableObject : MonoBehaviour
 {
     // Create a public UnityEvent to invoke so this script can be generic? 
     public GameObject go;
+    public GameObject additionalGo; 
+    public GameObject destroyGo; 
     public AudioClip sound;
 
     public bool OverrideInteractionDisabled = false; 
@@ -35,6 +37,7 @@ public class ClickableObject : MonoBehaviour
     {
         if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         if (go != null) go.SetActive(true);
+        if (additionalGo != null) additionalGo.SetActive(true);
         SoundEffectManager.S.playSound(sound);
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
         if (isDestructable)
@@ -47,6 +50,7 @@ public class ClickableObject : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         } 
+        if (destroyGo != null) destroyGo.SetActive(false);
         if (animateSomethingOnce)
         {
             objectToAnimate.Play("Grow");

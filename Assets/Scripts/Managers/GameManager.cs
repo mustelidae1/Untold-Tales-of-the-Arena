@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager S;
 
     public GameObject symbolKeyButton;
+    public GameObject settingsButton;
+    public GameObject settingsPage; 
     public SymbolKey symbolKey;
     public GameObject introEnvelope; 
 
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(symbolKeyButton);
         DontDestroyOnLoad(symbolKey);
+        DontDestroyOnLoad(settingsButton);
+        DontDestroyOnLoad(settingsPage); 
         introEnvelope.SetActive(true); 
         rewards = new List<symbol>();
         puzzlesSolved = new List<symbol>(); 
