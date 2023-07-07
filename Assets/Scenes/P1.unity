@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 70704738}
   - component: {fileID: 70704737}
   m_Layer: 2
-  m_Name: Samnite
+  m_Name: DIma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: f3885b44e6f5d154e8b120d3b207fd69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1582a562f11a9aa459b289537ed9882c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,8 +202,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70704734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -1.72, z: 0}
-  m_LocalScale: {x: 1.1476, y: 1.1476, z: 1.1476}
+  m_LocalPosition: {x: -4.37, y: -1.7, z: 0}
+  m_LocalScale: {x: 1.2348176, y: 1.2348176, z: 1.2348176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -226,7 +226,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.39, y: 3.48}
+    oldSize: {x: 1.99, y: 3.21}
     newSize: {x: 2.39, y: 3.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1600,7 +1600,7 @@ PrefabInstance:
     - target: {fileID: 1812142518547592122, guid: b567c1f610f61b14cbf1b877bf59b44a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ee5151afcf2443a46914e5764880283a, type: 3}
+      objectReference: {fileID: 21300000, guid: c2d4bd35cf4fd4f4f887f355c93f6712, type: 3}
     - target: {fileID: 1812142518547592122, guid: b567c1f610f61b14cbf1b877bf59b44a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -2069,7 +2069,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f8935e397527fbc4cbc4f072f623210e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b87f99e70ba39e74f8e533692d829453, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2088,8 +2088,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692956694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 2.32, z: 0}
-  m_LocalScale: {x: 1.3046914, y: 1.3046914, z: 1.3046914}
+  m_LocalPosition: {x: -0.25, y: 2.53, z: 0}
+  m_LocalScale: {x: 0.74260753, y: 0.74260753, z: 0.74260753}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2123,18 +2123,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.014680862, y: 0.00000023841858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.42, y: 2.17}
+    oldSize: {x: 4.01, y: 4.02}
     newSize: {x: 2.42, y: 2.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.42, y: 2.17}
+  m_Size: {x: 3.9761882, y: 4.049171}
   m_EdgeRadius: 0
 --- !u!114 &1778381581 stripped
 MonoBehaviour:
@@ -2772,6 +2772,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 0}
+  additionalGo: {fileID: 0}
+  destroyGo: {fileID: 0}
   sound: {fileID: 8300000, guid: db50080b5ceaa5c48b15abee9916bd4b, type: 3}
   OverrideInteractionDisabled: 1
   isDestructable: 1
