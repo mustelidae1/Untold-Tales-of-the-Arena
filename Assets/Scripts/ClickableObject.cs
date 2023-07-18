@@ -23,19 +23,19 @@ public class ClickableObject : MonoBehaviour
     public symbol reward; 
 
     void OnMouseEnter() {
-        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
+        if (GameManager.S && GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         CursorChanger.S.changeCursorTexture(CursorChanger.S.highlightedCursor); 
     }
 
     void OnMouseExit()
     {
-        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
+        if (GameManager.S && GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
     }
 
     void OnMouseDown()
     {
-        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
+        if (GameManager.S && GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         if (go != null) go.SetActive(true);
         if (additionalGo != null) additionalGo.SetActive(true);
         SoundEffectManager.S.playSound(sound);

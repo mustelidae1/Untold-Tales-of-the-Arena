@@ -18,17 +18,13 @@ public class GameManager : MonoBehaviour
     public Puzzle currentPuzzle;
     public bool interactionDisabled = false;
 
+    public bool menu = false; 
 
-    void Awake()
+
+    void Start()
     {
-        if (S != null && S != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            S = this;
-        }
+        S = this; 
+        if (menu) return;
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(symbolKeyButton);
         DontDestroyOnLoad(symbolKey);

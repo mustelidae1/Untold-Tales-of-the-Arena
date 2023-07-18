@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
@@ -10,7 +10,8 @@ public class NavigationObject : MonoBehaviour
     public directions direction;
     public String destinationScene;
     public bool changeRoom = true;
-    public bool changePage = false; 
+    public bool changePage = false;
+    public bool exit = false; 
     public AudioClip sound;
 
     public bool OverrideInteractionDisabled = false;
@@ -21,7 +22,7 @@ public class NavigationObject : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return; 
+        if (GameManager.S && GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return; 
         if (!CursorChanger.S) return; 
         if (direction == directions.left)
         {
@@ -47,13 +48,14 @@ public class NavigationObject : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
+        if (GameManager.S && GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
     }
 
     void OnMouseDown()
     {
-        if (GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
+        if (GameManager.S && GameManager.S.interactionDisabled && !OverrideInteractionDisabled) return;
+        if (exit) Application.Quit();
         if (changeRoom)
         {
             Debug.Log("Navigate to " + destinationScene);

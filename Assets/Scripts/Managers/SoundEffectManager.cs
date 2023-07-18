@@ -20,7 +20,7 @@ public class SoundEffectManager : MonoBehaviour
         {
             S = this;
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void stopMusic()

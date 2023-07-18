@@ -338,13 +338,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClickableObject
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1050258359816136321, guid: 760e127ea8fa449458b1d55f41c47c96, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 760e127ea8fa449458b1d55f41c47c96, type: 3}
 --- !u!4 &151218885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1050258359816136322, guid: 760e127ea8fa449458b1d55f41c47c96, type: 3}
   m_PrefabInstance: {fileID: 151218884}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &151218886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1050258359816136382, guid: 760e127ea8fa449458b1d55f41c47c96, type: 3}
+  m_PrefabInstance: {fileID: 151218884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &151218887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151218886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfeb0b995dfd36419e533cab3b4f6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 4
+  destinationScene: 
+  changeRoom: 0
+  changePage: 0
+  exit: 1
+  sound: {fileID: 0}
+  OverrideInteractionDisabled: 0
+  pages: []
+  page: {fileID: 0}
+  stopMusic: 0
 --- !u!1 &250762241
 GameObject:
   m_ObjectHideFlags: 0

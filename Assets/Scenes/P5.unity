@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5263110056907729573, guid: 84d8d36efc1f92549bdeb9c887c94e0d, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 146f1f029de03d9419019eef58be7b63, type: 3}
     - target: {fileID: 5263110056907729574, guid: 84d8d36efc1f92549bdeb9c887c94e0d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -214,7 +218,7 @@ MonoBehaviour:
   rewardObjects: []
   hideObjects: []
   objectToAnimate: {fileID: 0}
-  successSound: {fileID: 8300000, guid: db50080b5ceaa5c48b15abee9916bd4b, type: 3}
+  successSound: {fileID: 0}
   reward: 4
   isSolved: 0
 --- !u!4 &61233175
@@ -651,6 +655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 0}
+  additionalGo: {fileID: 0}
+  destroyGo: {fileID: 0}
   sound: {fileID: 8300000, guid: db50080b5ceaa5c48b15abee9916bd4b, type: 3}
   OverrideInteractionDisabled: 0
   isDestructable: 1
