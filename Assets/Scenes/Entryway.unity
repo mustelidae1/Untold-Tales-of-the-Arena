@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c004f8b53fd87e54595d312abe1f886f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c968557ed894b0443893078d86953ee6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,8 +200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363344219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.03, z: 0}
-  m_LocalScale: {x: 1.0738, y: 1.0738, z: 1.0738}
+  m_LocalPosition: {x: 0.0021, y: 0.0012, z: 0}
+  m_LocalScale: {x: 0.18019575, y: 0.18019575, z: 0.18019575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -488,8 +488,13 @@ MonoBehaviour:
   direction: 3
   destinationScene: Office
   changeRoom: 1
+  changePage: 0
+  exit: 0
   sound: {fileID: 8300000, guid: 82b2f89984b235740ab0ee3dd605d0ca, type: 3}
   OverrideInteractionDisabled: 0
+  pages: []
+  page: {fileID: 0}
+  stopMusic: 0
 --- !u!1 &2038089257
 GameObject:
   m_ObjectHideFlags: 0
