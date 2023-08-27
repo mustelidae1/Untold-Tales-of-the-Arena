@@ -66,7 +66,7 @@ public class NavigationObject : MonoBehaviour
             {
                 g.SetActive(false); 
             }
-            page.SetActive(true); 
+            if (page != null) page.SetActive(true); 
         } else 
         {
             gameObject.transform.parent.gameObject.SetActive(false); 
