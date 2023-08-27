@@ -36,7 +36,7 @@ public class PuzzleObject : MonoBehaviour
             Quaternion newRot = sa.gameObject.transform.rotation;
             transform.position = newPos;
             transform.rotation = newRot;
-            transform.SetParent(null); 
+            transform.SetParent(match.transform); 
         }
     }
 }
