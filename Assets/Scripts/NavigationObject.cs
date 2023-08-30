@@ -13,6 +13,8 @@ public class NavigationObject : MonoBehaviour
     public bool changePage = false;
     public bool exit = false; 
     public AudioClip sound;
+    public List<GameObject> collidersToHide;
+    public List<GameObject> collidersToShow;
 
     public bool OverrideInteractionDisabled = false;
     public List<GameObject> pages;
@@ -73,7 +75,15 @@ public class NavigationObject : MonoBehaviour
         }
         CursorChanger.S.changeCursorTexture(CursorChanger.S.normalCursor);
         SoundEffectManager.S.playSound(sound);
-        if (stopMusic) SoundEffectManager.S.stopMusic(); 
+        if (stopMusic) SoundEffectManager.S.stopMusic();
+        foreach (GameObject g in collidersToHide)
+        {
+            g.SetActive(false);
+        }
+        foreach (GameObject g in collidersToShow)
+        {
+            g.SetActive(true);
+        }
     }
 }
 

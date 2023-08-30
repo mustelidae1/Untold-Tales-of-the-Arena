@@ -8,7 +8,9 @@ public class ClickableObject : MonoBehaviour
     // Create a public UnityEvent to invoke so this script can be generic? 
     public GameObject go;
     public GameObject additionalGo; 
-    public GameObject destroyGo; 
+    public GameObject destroyGo;
+    public List<GameObject> collidersToHide;
+    public List<GameObject> collidersToShow; 
     public AudioClip sound;
 
     public bool OverrideInteractionDisabled = false; 
@@ -51,6 +53,14 @@ public class ClickableObject : MonoBehaviour
             }
         } 
         if (destroyGo != null) destroyGo.SetActive(false);
+        foreach (GameObject g in collidersToHide)
+        {
+            g.SetActive(false); 
+        }
+        foreach (GameObject g in collidersToShow)
+        {
+            g.SetActive(true); 
+        }
         if (animateSomethingOnce)
         {
             objectToAnimate.Play("Grow");

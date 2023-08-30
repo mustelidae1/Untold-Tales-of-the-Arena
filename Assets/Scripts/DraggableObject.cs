@@ -86,6 +86,7 @@ public class DraggableObject : MonoBehaviour
                 d.sendBack(); 
             }
             po.transform.SetParent(overlap.gameObject.transform);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -1);
             if (overlap.gameObject == po.match)
             {
                 po.setCorrect();
