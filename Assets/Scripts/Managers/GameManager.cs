@@ -35,7 +35,13 @@ public class GameManager : MonoBehaviour
         puzzlesSolved = new List<symbol>(); 
     }
 
-    public void addReward(symbol sym)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
+public void addReward(symbol sym)
     {
         if (hasReward(sym)) return; 
         rewards.Add(sym);
