@@ -109,6 +109,7 @@ public class DraggableObject : MonoBehaviour
         transform.position = originalPos;
         transform.rotation = originalRot;
         transform.SetParent(originalParent);
+        po.setIncorrect(); 
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
